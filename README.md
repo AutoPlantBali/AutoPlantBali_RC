@@ -116,40 +116,49 @@ UPDATE_FIRMWARE=0
 * PWM Brushed
 * Mode Receiver RC:
 1.  **Mode 1 (RC Plane - Brushless)**
+
 | CHANNEL         | SIGNAL      | KETERANGAN         |
 |----------------:|------------:|-------------------:|
 | CHANNEL 1       | Aileron     | Servo              |
 | CHANNEL 2       | Elevator    | Servo              |
 | CHANNEL 3       | Throttle    | ESC Brushless      |
 | CHANNEL 4       | Rudder      | Servo              |
+
 2.  **Mode 2 (RC Plane - Brushed)**
+
 | CHANNEL         | SIGNAL      | KETERANGAN         |
 |----------------:|------------:|-------------------:|
 | CHANNEL 1       | Aileron     | Servo              |
 | CHANNEL 2       | Elevator    | Servo              |
 | CHANNEL 3       | Throttle    | PWM Brushed        |
 | CHANNEL 4       | Rudder      | Servo              |
+
 3.  **Mode 3 (RC Plane - 2 Channel Brushed)**
+
 | CHANNEL         | SIGNAL      | KETERANGAN         |
 |----------------:|------------:|-------------------:|
 | CHANNEL 1       | Aileron     | Left PWM Brushed   |
 | CHANNEL 2       | Elevator    | Left PWM Brushed   |
 | CHANNEL 3       | Throttle    | Right PWM Brushed  |
 | CHANNEL 4       | Rudder      | Right PWM Brushed  |
+
 4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
+
 | CHANNEL         | SIGNAL      | KETERANGAN         |
 |----------------:|------------:|-------------------:|
 | CHANNEL 1       | Aileron     | Servo              |
 | CHANNEL 2       | Elevator    | Servo              |
 | CHANNEL 3       | Throttle    | ESC Brushless      |
 | CHANNEL 4       | Throttle    | ESC Brushless      |
+
 5.  **Mode 5 (RC Plane - Brushed Elevon Mixing)**
+
 | CHANNEL         | SIGNAL      | KETERANGAN         |
 |----------------:|------------:|-------------------:|
 | CHANNEL 1       | Aileron     | Servo              |
 | CHANNEL 2       | Elevator    | Servo              |
 | CHANNEL 3       | Throttle    | PWM Brushed        |
-| CHANNEL 4       | Throttle    | PWM Brushed       |
+| CHANNEL 4       | Throttle    | PWM Brushed        |
 
 * Openlog
 * SBUS Output Receiver
