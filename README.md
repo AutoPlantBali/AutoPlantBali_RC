@@ -4,14 +4,18 @@ AutoPlantBali RC adalah remote control berbasis esp32 yang dikembangkan dari cod
 
 ## Transmitter AutoPlantBali RC
 Transmitter AutoPlantBali adalah external module remote yang dapat menerima signal SBUS, PPM, stick PS2 dan remote control mobile apps (RemoteXY) via bluetooth.
-* Fitur:
+* ### Fitur:
     - Support 16 Channel
     - Normal & Long Range Mode
     - Multiple Profile
     - Telemetry SPORT
     - Select Active Profile By CH16 
-* Transmitter Wiring Diagram
-* Configuration File
+* ### Transmitter Wiring Diagram
+  
+  ![tx_diagram](/doc/image/TX/tx_diagram.png)
+  
+* ### Configuration File
+
 ```text
 PPM_MAX_CHANNEL=8
 REMOTEXY_PROFILE=1
@@ -21,12 +25,25 @@ REMOTEXY_ACCESS_PASSWORD=1234
 REMOTEXY_SERIAL_SPEED=9600
 ALARM_VBAT=0
 MIN_ALARM_VBAT=35
-```    
-* Setup:
-    * Radio
-    * PS2 Controller
-    * RemoteXY (Android and Ios)
-* Profiles:
+```
+   
+* ### Setup:
+    * ### Radio
+
+      ![radio_pinout](/doc/image/TX/radio_pinout.png)
+
+      ![tx_external_1](/doc/image/TX/tx_external_1.jpg)
+      
+      ![tx_external_2](/doc/image/TX/tx_external_2.jpg)
+      
+      ![tx_external_3](/doc/image/TX/tx_external_3.jpg)  
+  
+    * ### PS2 Controller
+ 
+      ![ps2_pinout](/doc/image/TX/ps2_pinout.png)
+      
+    * ### RemoteXY (Android and Ios)
+* ### Profiles:
     - **Profile 1**
     ```json
     {
@@ -95,10 +112,15 @@ MIN_ALARM_VBAT=35
         "web_password" : "apb"
     }
     ```
+    
+    ![web_config](doc/image/TX/web_config.png)
 
 ## Receiver AutoPlantBali RC
-* Receiver Wiring Diagram
-* Configuration File
+* ### Receiver Wiring Diagram
+
+  ![rx_diagram](/doc/image/RX/rx_diagram.png)
+  
+* ### Configuration File
 ```text
 VERSION=
 DEVELOP=
@@ -113,8 +135,11 @@ LOG_BAUDRATE=115200
 ESC_CALIBRATION=0
 UPDATE_FIRMWARE=0
 ```
-* PWM Brushed
-* Mode Receiver RC:
+* ### PWM Brushed
+
+  ![pwm_switch](/doc/image/RX/pwm_switch.png)
+  
+* ### Mode Receiver RC:
 1.  **Mode 1 (RC Plane - Brushless)**
 
 | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -160,8 +185,10 @@ UPDATE_FIRMWARE=0
 | CHANNEL 3       | Throttle    | PWM Brushed        |
 | CHANNEL 4       | Throttle    | PWM Brushed        |
 
-* Openlog
-* SBUS Output Receiver
-* Quadcopter Drone (MultiWii)
+* ### Openlog
+* ### SBUS Output Receiver
+* ### Quadcopter Drone (MultiWii)
 
 ## Battery AutoPlantBali RC
+![battery_weight](/doc/image/BATTERY/battery_weight.jpg)
+![battery_capacity](/doc/image/BATTERY/battery_capacity.jpg)
