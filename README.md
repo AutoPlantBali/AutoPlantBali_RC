@@ -17,7 +17,7 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 * ### Configuration File
 
 | KEY                           | VALUE                             | KETERANGAN         |
-|------------------------------:|----------------------------------:|-------------------:|
+|:------------------------------|:---------------------------------:|:-------------------|
 | PPM_MAX_CHANNEL               | max 12, Default: 8                | Sesuikan dengan PPM out pada remote (channel terakhir akan menjadi channel 16 untuk config)|
 | REMOTEXY_PROFILE              | 1 - 10, Default: 1                | Pilih profile untuk app REMOTEXY (Android / Ios)|
 | REMOTEXY_MODEL                | 1 - 2, Default: 1                 | Pilih model/desain dari app REMOTEXY (Android / Ios)|
@@ -143,7 +143,7 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 * ### Configuration File
 
 | KEY                           | VALUE                             | KETERANGAN         |
-|------------------------------:|----------------------------------:|-------------------:|
+|:------------------------------|:---------------------------------:|:-------------------|
 | VERSION                       |                                   | Versi dari firmware rx|
 | DEVELOP                       |                                   | Pembuat firmware|
 | WIFI_CHANNEL                  | 1 - 11, Default: 3                | Range channel wifi dan kombinasi dengan key sebagai kode unik ke TX|
@@ -152,7 +152,7 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 | LR_MODE                       | 1 or 0, Defualt: 0                | Set 1 untuk mode Long Range dan 0 untuk mode normal|
 | LOG_ACTIVE                    | 1 or 0, Default: 0                | Set 1 untuk mengaktifkan openlog dan 0 untuk menonaktifkannya|
 | SBUS_ACTIVE                   | 1 or 0, Default: 0                | Set 1 untuk masuk ke mode RX SBUS output dan 0 untuk masuk ke RC mode|
-| RC_MODE                       | 1 - 5, Default: 1                 | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), untuk keamanan, pastikan untuk melepas propeller dari motor sebelum melakukan perubahan|
+| RC_MODE                       | 1 - 5, Default: 1                 | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
 | LOG_BAUDRATE                  | max 4000000                       | Setting speed baudrate dari openlog|
 | ESC_CALIBRATION               | 1 or 0, Default: 0                | ESC calibraton saat pertama kali dihidupkan (khusus untuk ESC simonk)|
 | UPDATE_FIRMWARE               | 1 or 0, Default: 0                | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
@@ -164,48 +164,48 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 * ### Mode Receiver RC:
 1.  **Mode 1 (RC Plane - Brushless)**
 
-| CHANNEL         | SIGNAL      | KETERANGAN         |
-|----------------:|------------:|-------------------:|
-| CHANNEL 1       | Aileron     | Servo              |
-| CHANNEL 2       | Elevator    | Servo              |
-| CHANNEL 3       | Throttle    | ESC Brushless      |
-| CHANNEL 4       | Rudder      | Servo              |
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Servo              |
+    | CHANNEL 2       | Elevator    | Servo              |
+    | CHANNEL 3       | Throttle    | ESC Brushless      |
+    | CHANNEL 4       | Rudder      | Servo              |
 
 2.  **Mode 2 (RC Plane - Brushed)**
 
-| CHANNEL         | SIGNAL      | KETERANGAN         |
-|----------------:|------------:|-------------------:|
-| CHANNEL 1       | Aileron     | Servo              |
-| CHANNEL 2       | Elevator    | Servo              |
-| CHANNEL 3       | Throttle    | PWM Brushed        |
-| CHANNEL 4       | Rudder      | Servo              |
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Servo              |
+    | CHANNEL 2       | Elevator    | Servo              |
+    | CHANNEL 3       | Throttle    | PWM Brushed        |
+    | CHANNEL 4       | Rudder      | Servo              |
 
 3.  **Mode 3 (RC Plane - 2 Channel Brushed)**
 
-| CHANNEL         | SIGNAL      | KETERANGAN         |
-|----------------:|------------:|-------------------:|
-| CHANNEL 1       | Aileron     | Left PWM Brushed   |
-| CHANNEL 2       | Elevator    | Left PWM Brushed   |
-| CHANNEL 3       | Throttle    | Right PWM Brushed  |
-| CHANNEL 4       | Rudder      | Right PWM Brushed  |
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Left PWM Brushed   |
+    | CHANNEL 2       | Elevator    | Left PWM Brushed   |
+    | CHANNEL 3       | Throttle    | Right PWM Brushed  |
+    | CHANNEL 4       | Rudder      | Right PWM Brushed  |
 
 4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
 
-| CHANNEL         | SIGNAL      | KETERANGAN         |
-|----------------:|------------:|-------------------:|
-| CHANNEL 1       | Aileron     | Servo              |
-| CHANNEL 2       | Elevator    | Servo              |
-| CHANNEL 3       | Throttle    | ESC Brushless      |
-| CHANNEL 4       | Throttle    | ESC Brushless      |
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Servo              |
+    | CHANNEL 2       | Elevator    | Servo              |
+    | CHANNEL 3       | Throttle    | ESC Brushless      |
+    | CHANNEL 4       | Throttle    | ESC Brushless      |
 
 5.  **Mode 5 (RC Plane - Brushed Elevon Mixing)**
 
-| CHANNEL         | SIGNAL      | KETERANGAN         |
-|----------------:|------------:|-------------------:|
-| CHANNEL 1       | Aileron     | Servo              |
-| CHANNEL 2       | Elevator    | Servo              |
-| CHANNEL 3       | Throttle    | PWM Brushed        |
-| CHANNEL 4       | Throttle    | PWM Brushed        |
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Servo              |
+    | CHANNEL 2       | Elevator    | Servo              |
+    | CHANNEL 3       | Throttle    | PWM Brushed        |
+    | CHANNEL 4       | Throttle    | PWM Brushed        |
 
 * ### Openlog
 * ### SBUS Output Receiver
