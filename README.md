@@ -60,6 +60,14 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
   
     * ### PS2 Controller
  
+      | TX PIN          | PS2 PIN       |
+      |:----------------|:--------------|
+      | 3V3             | VCC           |
+      | PS2_ATT         | CS            |
+      | PS2_CLK         | CLK           |
+      | PS2_CMD         | DO            |
+      | PS2_DAT         | DI            |
+      
       ![ps2_pinout](/doc/image/TX/ps2_pinout.png)
       
     * ### RemoteXY (Android and Ios)
@@ -160,6 +168,10 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 * ### PWM Brushed
 
   ![pwm_switch](/doc/image/RX/pwm_switch.png)
+
+* ### PWM H-Bridge
+
+  ![](/doc/image/RX/ta6586-circuit-diagram.jpg)
   
 * ### Mode Receiver RC:
 1.  **Mode 1 (RC Plane - Brushless)**
@@ -206,6 +218,15 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
     | CHANNEL 2       | Elevator    | Servo              |
     | CHANNEL 3       | Throttle    | PWM Brushed        |
     | CHANNEL 4       | Throttle    | PWM Brushed        |
+
+6.  **Mode 6 (RC Car / Boat)**
+
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Servo Steering     |
+    | CHANNEL 2       | Elevator    | -                  |
+    | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
+    | CHANNEL 4       | Throttle    | PWM H-Bridge (IN2) |
 
 * ### Openlog
 * ### SBUS Output Receiver
