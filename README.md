@@ -160,7 +160,7 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 | LR_MODE                       | 1 or 0, Defualt: 0                | Set 1 untuk mode Long Range dan 0 untuk mode normal|
 | LOG_ACTIVE                    | 1 or 0, Default: 0                | Set 1 untuk mengaktifkan openlog dan 0 untuk menonaktifkannya|
 | SBUS_ACTIVE                   | 1 or 0, Default: 0                | Set 1 untuk masuk ke mode RX SBUS output dan 0 untuk masuk ke RC mode|
-| RC_MODE                       | 1 - 5, Default: 1                 | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
+| RC_MODE                       | 1 - 7, Default: 1                 | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
 | LOG_BAUDRATE                  | max 4000000                       | Setting speed baudrate dari openlog|
 | ESC_CALIBRATION               | 1 or 0, Default: 0                | ESC calibraton saat pertama kali dihidupkan (khusus untuk ESC simonk)|
 | UPDATE_FIRMWARE               | 1 or 0, Default: 0                | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
@@ -224,19 +224,28 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
     | CHANNEL         | SIGNAL      | KETERANGAN         |
     |----------------:|------------:|-------------------:|
     | CHANNEL 1       | Aileron     | Servo Steering     |
-    | CHANNEL 2       | Elevator    | -                  |
+    | CHANNEL 2       | Elevator    | Servo              |
     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
     | CHANNEL 4       | Throttle    | PWM H-Bridge (IN2) |
 
-* ### Openlog
+7.  **Mode 7 (RC Tank)**
+
+    | CHANNEL         | SIGNAL      | KETERANGAN               |
+    |----------------:|------------:|-------------------------:|
+    | CHANNEL 1       | Aileron     | Left PWM H-Bridge (IN1)  |
+    | CHANNEL 2       | Aileron     | Left PWM H-Bridge (IN2)  |
+    | CHANNEL 3       | Throttle    | Right PWM H-Bridge (IN1) |
+    | CHANNEL 4       | Throttle    | Right PWM H-Bridge (IN2) |
+
 * ### SBUS Output Receiver
+* ### Openlog
 * ### Quadcopter Drone (MultiWii)
 
 ## Battery AutoPlantBali RC
 * Battery 1S with PH2.0 Plug Connector
 * Weight: 18gr
 * dimension: 37mm x 13mm
-* Max charger 0.4A
+* Max charger 0.5A
 
 ![battery_weight](/doc/image/BATTERY/battery_weight.jpg)
 ![battery_capacity](/doc/image/BATTERY/battery_capacity.jpg)
