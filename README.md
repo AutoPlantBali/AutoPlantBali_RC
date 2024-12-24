@@ -4,6 +4,8 @@ AutoPlantBali RC adalah remote control berbasis esp32 yang dikembangkan dari cod
 
 ## Transmitter AutoPlantBali RC
 Transmitter AutoPlantBali adalah external module remote yang dapat menerima signal SBUS, PPM, stick PS2 dan remote control mobile apps (RemoteXY) via bluetooth.
+
+Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
 * ### Fitur:
     - Support 16 Channel
     - Normal & Long Range Mode
@@ -26,6 +28,8 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
 | REMOTEXY_SERIAL_SPEED         | 9600 or 19200, Default: 9600      | Hubungkan module bluetooth HC-05 atau HM-10 untuk terhubung ke app REMOTEXY (Android / Ios)|
 | ALARM_VBAT                    | 1 or 0, Default: 0                | Set 1 untuk mengaktifkan alarm low battery dan 0 untuk menonaktifkannya|
 | MIN_ALARM_VBAT                | Volt Battery x 10, Default: 35    | Set volt per cell battery dikali 10, contoh: set 3.5Volt untuk aktifakan alarm maka valuenya 35|
+| VBAT_OFFSET                   | Vbat offset value                 | Atur nilai offset vbat, contoh: battery 4V tapi di tampilan 3.5V, maka perlu atur nilai 0.5 agar sesuai dengan volt battery yaitu nilai offset 0.5 dikali 10 = 5|
+| FLIP_DISPLAY                  | 1 or 0, Default: 0                | Set 1 untuk membalikan tampilan layar LCD 180 derajat|
    
 * ### Setup:
     * ### Radio
@@ -45,6 +49,18 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
          ![tab_mixes](/doc/image/TX/tab_mixes.jpg)
          ![edit_mixes](/doc/image/TX/edit_mixes.jpg)
       3. Setting weight **0** dan offset sesuai profile yang ingin dipilih.
+
+         - 1000...1100 ( or -100%) - profile 1
+         - 1100...1200 ( or -80%)  - profile 2
+         - 1200...1300 ( or -60%)  - profile 3
+         - 1300...1400 ( or -40%)  - profile 4
+         - 1400...1500 ( or -20%)  - profile 5
+         - 1500...1600 ( or 0%)    - profile 6
+         - 1600...1700 ( or +20%)  - profile 7
+         - 1700...1800 ( or +40%)  - profile 8
+         - 1800...1900 ( or +60%)  - profile 9
+         - 1900...2000 ( or +80%)  - profile 10 (Configuration mode)
+
          ![mixes_ch16](/doc/image/TX/mixes_ch16.jpg)
          ![mixes_ch16_1](/doc/image/TX/mixes_ch16_1.jpg)    
 
@@ -55,22 +71,79 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
          ![tab_mixes](/doc/image/TX/tab_mixes.jpg)
          ![edit_mixes](/doc/image/TX/edit_mixes.jpg)
       3. Setting weight **0** dan offset sesuai profile yang ingin dipilih.
+
+         - 1000...1100 ( or -100%) - profile 1
+         - 1100...1200 ( or -80%)  - profile 2
+         - 1200...1300 ( or -60%)  - profile 3
+         - 1300...1400 ( or -40%)  - profile 4
+         - 1400...1500 ( or -20%)  - profile 5
+         - 1500...1600 ( or 0%)    - profile 6
+         - 1600...1700 ( or +20%)  - profile 7
+         - 1700...1800 ( or +40%)  - profile 8
+         - 1800...1900 ( or +60%)  - profile 9
+         - 1900...2000 ( or +80%)  - profile 10 (Configuration mode)
+
          ![mixes_ch16](/doc/image/TX/mixes_ch8.jpg)
          ![mixes_ch16_1](/doc/image/TX/mixes_ch8_1.jpg)   
   
     * ### PS2 Controller
- 
-      | TX PIN          | PS2 PIN       |
-      |:----------------|:--------------|
-      | 3V3             | VCC           |
-      | PS2_ATT         | CS            |
-      | PS2_CLK         | CLK           |
-      | PS2_CMD         | DO            |
-      | PS2_DAT         | DI            |
+      * ### PS2 Wiring
+
+        | TX PIN          | PS2 PIN           |
+        |:----------------|:------------------|
+        | 3V3             | VCC               |
+        | VSS             | GND               |
+        | PS2_ATT         | CS (Attention)    |
+        | PS2_CLK         | CLK (Clock)       |
+        | PS2_CMD         | DO (Command)      |
+        | PS2_DAT         | DI (Data)         |
       
-      ![ps2_pinout](/doc/image/TX/ps2_pinout.png)
+        ![ps2_pinout](/doc/image/TX/ps2_pinout.png)
+        ![ps2_button_info](/doc/image/TX/ps2_button_info.jpg)
+
+      * ### Select Profile
+        Untuk mengganti profile TX dengan cara tekan tombol **SELECT** pada PS2 Controller
+      * ### Calibate Joystick
+        Untuk melakukan kalibrasi joystick dengan cara masuk mode profile 10 (Config) lalu tekan tombol **START**, tunggu beberapa saat sampai proses kalibrasi selesai. Pada saat kalibrasi analog joystick tidak boleh digerakan atau dalam posisi center.
+
+        ![ps2_controller_top](/doc/image/TX/ps2_controller_top.jpg)
+        ![ps2_controller_bottom](/doc/image/TX/ps2_controller_bottom.jpg)
       
     * ### RemoteXY (Android and Ios)
+      HC-05 Bluetooth Module  
+      ![hc-05_module](/doc/image/TX/hc-05_module.png)
+
+      HM-10 Bluetooth Module
+      ![hm-10_module](/doc/image/TX/hm-10_module.jpg)
+
+      | TX PIN          | HC-05 / HM-10 |
+      |:----------------|:--------------|
+      | 3V3             | VCC           |
+      | VSS             | GND           |
+      | PS2_CMD         | TX            |
+      | PS2_DAT         | RX            |
+
+      Setting baudrate module HC-05 / HM-10 harus sama dengan yang ada di file config [**REMOTEXY_SERIAL_SPEED**](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file)
+
+      **Model 1**
+      ![remotexy_model1_1](/doc/image/TX/remotexy_model1_1.png)
+      ![remotexy_model1_2](/doc/image/TX/remotexy_model1_2.png)
+
+      **Model 2**
+      ![remotexy_model2_1](/doc/image/TX/remotexy_model2_1.png)
+      ![remotexy_model2_2](/doc/image/TX/remotexy_model2_2.png)
+
+    * ### LCD Display TX
+      LCD OLED 0.91 Inch 128x32 I2C
+      ![lcd_oled_pinout](/doc/image/TX/lcd_oled_pinout.png)
+
+      | TX PIN          | LCD OLED 0.91 Inch |
+      |:----------------|:-------------------|
+      | 3V3             | VCC                |
+      | VSS             | GND                |
+      | SCL             | SCL                |
+      | SDA             | SDA                |    
+
 * ### Profiles:
     - **Profile 1**
     ```json
@@ -144,6 +217,7 @@ Transmitter AutoPlantBali adalah external module remote yang dapat menerima sign
     ![web_config](doc/image/TX/web_config.png)
 
 ## Receiver AutoPlantBali RC
+Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 * ### Receiver Wiring Diagram
 
   ![rx_diagram](/doc/image/RX/rx_diagram.png)
