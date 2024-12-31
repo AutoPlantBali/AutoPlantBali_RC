@@ -21,8 +21,11 @@ Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
 | KEY                           | VALUE                             | KETERANGAN         |
 |:------------------------------|:---------------------------------:|:-------------------|
 | PPM_MAX_CHANNEL               | max 12, Default: 8                | Sesuikan dengan PPM out pada remote (channel terakhir akan menjadi channel 16 untuk config)|
-| REMOTEXY_PROFILE              | 1 - 10, Default: 1                | Pilih profile untuk app REMOTEXY (Android / Ios)|
-| REMOTEXY_MODEL                | 1 - 2, Default: 1                 | Pilih model/desain dari app REMOTEXY (Android / Ios)|
+| AILERON_REVERSE               | 1 or 0, Default: 0                | Set 1 untuk membalikan nilai dari aileron (hanya untuk mode PS2 dan RemoteXY)|
+| ELEVATOR_REVERSE              | 1 or 0, Default: 0                | Set 1 untuk membalikan nilai dari elevator (hanya untuk mode PS2 dan RemoteXY)|
+| RUDDER_REVERSE                | 1 or 0, Default: 0                | Set 1 untuk membalikan nilai dari rudder (hanya untuk mode PS2 dan RemoteXY)|
+| REMOTEXY_PROFILE              | 1 ~ 10, Default: 1                | Pilih profile untuk app REMOTEXY (Android / Ios)|
+| REMOTEXY_MODEL                | 1 or 2, Default: 1                | Pilih model/desain dari app REMOTEXY (Android / Ios)|
 | REMOTEXY_THROTTLE_CENTER      | 1 or 0, Default: 0                | Pilih throttle center = 0 untuk rc plane atau 1 untuk rc car|
 | REMOTEXY_ACCESS_PASSWORD      | 4 digit number, Default: 1234     | Password akses untuk membuka menu remote di app REMOTEXY (Android / Ios)|
 | REMOTEXY_SERIAL_SPEED         | 9600 or 19200, Default: 9600      | Hubungkan module bluetooth HC-05 atau HM-10 untuk terhubung ke app REMOTEXY (Android / Ios)|
@@ -208,12 +211,11 @@ Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
     {
         "transmitter_mode" : "CONFIG",
         "ap_name" : "hxrct",
-        "ap_password" : "",
-        "web_user" : "apb",
-        "web_password" : "apb"
+        "ap_password" : ""
     }
     ```
     
+    Pilih profile 10, setelah itu hubungkan laptop / hp dengan nama wifi sesuai dengan **ap_name** (defaul: hxrct) lalu ketik di browser dengan url: 192.168.4.1/manager dan login dengan user: **admin** dan password: **admin**
     ![web_config](doc/image/TX/web_config.png)
 
 ## Receiver AutoPlantBali RC
@@ -224,20 +226,23 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
   
 * ### Configuration File
 
-| KEY                           | VALUE                             | KETERANGAN         |
-|:------------------------------|:---------------------------------:|:-------------------|
-| VERSION                       |                                   | Versi dari firmware rx|
-| DEVELOP                       |                                   | Pembuat firmware|
-| WIFI_CHANNEL                  | 1 - 11, Default: 3                | Range channel wifi dan kombinasi dengan key sebagai kode unik ke TX|
-| KEY                           | 0 - 65535, Default: 0             | Key yang dikombinasi dengan channel wifi sebagai kode unik ke TX|
-| WIFI_PASSWORD                 | Password wifi rx                  | Password wifi RX|
-| LR_MODE                       | 1 or 0, Defualt: 0                | Set 1 untuk mode Long Range dan 0 untuk mode normal|
-| LOG_ACTIVE                    | 1 or 0, Default: 0                | Set 1 untuk mengaktifkan openlog dan 0 untuk menonaktifkannya|
-| SBUS_ACTIVE                   | 1 or 0, Default: 0                | Set 1 untuk masuk ke mode RX SBUS output dan 0 untuk masuk ke RC mode|
-| RC_MODE                       | 1 - 7, Default: 1                 | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
-| LOG_BAUDRATE                  | max 4000000                       | Setting speed baudrate dari openlog|
-| ESC_CALIBRATION               | 1 or 0, Default: 0                | ESC calibraton saat pertama kali dihidupkan (khusus untuk ESC simonk)|
-| UPDATE_FIRMWARE               | 1 or 0, Default: 0                | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
+| KEY                 | VALUE                     | KETERANGAN         |
+|:--------------------|:--------------------------|:-------------------|
+| VERSION             |                           | Versi dari firmware rx|
+| DEVELOP             |                           | Pembuat firmware|
+| WIFI_CHANNEL        | 1 ~ 11, Default: 3        | Range channel wifi dan kombinasi dengan key sebagai kode unik ke TX|
+| KEY                 | 0 ~ 65535, Default: 0     | Key yang dikombinasi dengan channel wifi sebagai kode unik ke TX|
+| WIFI_PASSWORD       | Password wifi rx          | Password wifi RX|
+| LR_MODE             | 1 or 0, Defualt: 0        | Set 1 untuk mode Long Range dan 0 untuk mode normal|
+| LOG_ACTIVE          | 1 or 0, Default: 0        | Set 1 untuk mengaktifkan openlog dan 0 untuk menonaktifkannya|
+| SBUS_ACTIVE         | 1 or 0, Default: 0        | Set 1 untuk masuk ke mode RX SBUS output dan 0 untuk masuk ke RC mode|
+| RC_MODE             | 1 ~ 8, Default: 1         | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
+| LOG_BAUDRATE        | max 4000000               | Setting speed baudrate dari openlog|
+| ESC_CALIBRATION     | 1 or 0, Default: 0        | ESC calibraton saat pertama kali dihidupkan (khusus untuk ESC simonk)|
+| ADJUST_AILERON      | -400 ~ 500, Default: 0    | Adjust range servo aileron|
+| ADJUST_ELEVATOR     | -400 ~ 500, Default: 0    | Adjust range servo elevator|
+| ADJUST_RUDDER       | -400 ~ 500, Default: 0    | Adjust range servo rudder|  
+| UPDATE_FIRMWARE     | 1 or 0, Default: 0        | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
 
 * ### PWM Brushed
 
@@ -293,7 +298,7 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | CHANNEL 3       | Throttle    | PWM Brushed        |
     | CHANNEL 4       | Throttle    | PWM Brushed        |
 
-6.  **Mode 6 (RC Car / Boat)**
+6.  **Mode 6 (RC Car / Boat - Brushed)**
 
     | CHANNEL         | SIGNAL      | KETERANGAN         |
     |----------------:|------------:|-------------------:|
@@ -302,7 +307,7 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
     | CHANNEL 4       | Throttle    | PWM H-Bridge (IN2) |
 
-7.  **Mode 7 (RC Tank)**
+7.  **Mode 7 (RC Tank - Brushed)**
 
     | CHANNEL         | SIGNAL      | KETERANGAN               |
     |----------------:|------------:|-------------------------:|
@@ -310,6 +315,15 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | CHANNEL 2       | Aileron     | Left PWM H-Bridge (IN2)  |
     | CHANNEL 3       | Throttle    | Right PWM H-Bridge (IN1) |
     | CHANNEL 4       | Throttle    | Right PWM H-Bridge (IN2) |
+
+8.  **Mode 8 (RC Plane 3 Channel - Brushed twin motor)**
+
+    | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |----------------:|------------:|-------------------:|
+    | CHANNEL 1       | Aileron     | Servo              |
+    | CHANNEL 2       | Elevator    | Servo              |
+    | CHANNEL 3       | Throttle    | PWM Brushed        |
+    | CHANNEL 4       | Throttle    | PWM Brushed        |
 
 * ### SBUS Output Receiver
 * ### Openlog
