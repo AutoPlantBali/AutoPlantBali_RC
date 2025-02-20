@@ -236,12 +236,12 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 | LR_MODE             | 1 or 0, Defualt: 0        | Set 1 untuk mode Long Range dan 0 untuk mode normal|
 | LOG_ACTIVE          | 1 or 0, Default: 0        | Set 1 untuk mengaktifkan openlog dan 0 untuk menonaktifkannya|
 | SBUS_ACTIVE         | 1 or 0, Default: 0        | Set 1 untuk masuk ke mode RX SBUS output dan 0 untuk masuk ke RC mode|
-| RC_MODE             | 1 ~ 8, Default: 1         | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
+| RC_MODE             | 1 ~ 10, Default: 1         | Setting [RC Mode](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main#mode-receiver-rc), lepas semua yang terhubung ke pin RX sebelum melakukan perubahan|
 | LOG_BAUDRATE        | max 4000000               | Setting speed baudrate dari openlog|
 | ESC_CALIBRATION     | 1 or 0, Default: 0        | ESC calibraton saat pertama kali dihidupkan (khusus untuk ESC simonk)|
-| ADJUST_AILERON      | -400 ~ 500, Default: 0    | Adjust range servo aileron|
-| ADJUST_ELEVATOR     | -400 ~ 500, Default: 0    | Adjust range servo elevator|
-| ADJUST_RUDDER       | -400 ~ 500, Default: 0    | Adjust range servo rudder|  
+| ADJUST_AILERON      | -400 ~ 500, Default: 0    | Adjust range servo aileron (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|
+| ADJUST_ELEVATOR     | -400 ~ 500, Default: 0    | Adjust range servo elevator (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|
+| ADJUST_RUDDER       | -400 ~ 500, Default: 0    | Adjust range servo rudder (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|  
 | UPDATE_FIRMWARE     | 1 or 0, Default: 0        | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
 
 * ### PWM Brushed
@@ -255,79 +255,126 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 * ### Mode Receiver RC:
 1.  **Mode 1 (RC Plane - Brushless)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Servo              |
-    | CHANNEL 2       | Elevator    | Servo              |
-    | CHANNEL 3       | Throttle    | ESC Brushless      |
-    | CHANNEL 4       | Rudder      | Servo              |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo              |
+    | IO33     | CHANNEL 2       | Elevator    | Servo              |
+    | IO25     | CHANNEL 3       | Throttle    | ESC Brushless      |
+    | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
 2.  **Mode 2 (RC Plane - Brushed)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Servo              |
-    | CHANNEL 2       | Elevator    | Servo              |
-    | CHANNEL 3       | Throttle    | PWM Brushed        |
-    | CHANNEL 4       | Rudder      | Servo              |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo              |
+    | IO33     | CHANNEL 2       | Elevator    | Servo              |
+    | IO25     | CHANNEL 3       | Throttle    | PWM Brushed        |
+    | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
 3.  **Mode 3 (RC Plane - 2 Channel Brushed)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Left PWM Brushed   |
-    | CHANNEL 2       | Elevator    | Left PWM Brushed   |
-    | CHANNEL 3       | Throttle    | Right PWM Brushed  |
-    | CHANNEL 4       | Rudder      | Right PWM Brushed  |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Left PWM Brushed   |
+    | IO33     | CHANNEL 2       | Elevator    | Left PWM Brushed   |
+    | IO25     | CHANNEL 3       | Throttle    | Right PWM Brushed  |
+    | IO26     | CHANNEL 4       | Rudder      | Right PWM Brushed  |
 
 4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Servo              |
-    | CHANNEL 2       | Elevator    | Servo              |
-    | CHANNEL 3       | Throttle    | ESC Brushless      |
-    | CHANNEL 4       | Throttle    | ESC Brushless      |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo              |
+    | IO33     | CHANNEL 2       | Elevator    | Servo              |
+    | IO25     | CHANNEL 3       | Throttle    | ESC Brushless      |
+    | IO36     | CHANNEL 3       | Throttle    | ESC Brushless      |
 
 5.  **Mode 5 (RC Plane - Brushed Elevon Mixing)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Servo              |
-    | CHANNEL 2       | Elevator    | Servo              |
-    | CHANNEL 3       | Throttle    | PWM Brushed        |
-    | CHANNEL 4       | Throttle    | PWM Brushed        |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo              |
+    | IO33     | CHANNEL 2       | Elevator    | Servo              |
+    | IO25     | CHANNEL 3       | Throttle    | PWM Brushed        |
+    | IO26     | CHANNEL 3       | Throttle    | PWM Brushed        |
 
 6.  **Mode 6 (RC Car / Boat - Brushed)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Servo Steering     |
-    | CHANNEL 2       | Elevator    | Servo              |
-    | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
-    | CHANNEL 4       | Throttle    | PWM H-Bridge (IN2) |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo Steering     |
+    | -        | -               | -           | -                  |
+    | IO25     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
+    | IO26     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN2) |
 
 7.  **Mode 7 (RC Tank - Brushed)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN               |
-    |----------------:|------------:|-------------------------:|
-    | CHANNEL 1       | Aileron     | Left PWM H-Bridge (IN1)  |
-    | CHANNEL 2       | Aileron     | Left PWM H-Bridge (IN2)  |
-    | CHANNEL 3       | Throttle    | Right PWM H-Bridge (IN1) |
-    | CHANNEL 4       | Throttle    | Right PWM H-Bridge (IN2) |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN               |
+    |---------:|----------------:|------------:|-------------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Left PWM H-Bridge (IN1)  |
+    | IO33     | CHANNEL 2       | Aileron     | Left PWM H-Bridge (IN2)  |
+    | IO25     | CHANNEL 3       | Throttle    | Right PWM H-Bridge (IN1) |
+    | IO26     | CHANNEL 4       | Throttle    | Right PWM H-Bridge (IN2) |
 
 8.  **Mode 8 (RC Plane 3 Channel - Brushed twin motor)**
 
-    | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |----------------:|------------:|-------------------:|
-    | CHANNEL 1       | Aileron     | Servo              |
-    | CHANNEL 2       | Elevator    | Servo              |
-    | CHANNEL 3       | Throttle    | PWM Brushed        |
-    | CHANNEL 4       | Throttle    | PWM Brushed        |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
+    |---------:|----------------:|------------:|-------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo              |
+    | IO33     | CHANNEL 2       | Elevator    | Servo              |
+    | IO25     | CHANNEL 3       | Throttle    | PWM Brushed        |
+    | IO26     | CHANNEL 3       | Throttle    | PWM Brushed        |
 
 * ### SBUS Output Receiver
 * ### Openlog
 * ### Quadcopter Drone (MultiWii)
+
+  | RX PIN   | GY-87 PIN    |
+  |---------:|-------------:|
+  | 3V3      | VCC          |
+  | VSS      | GND          |
+  | SCL      | SCL          |
+  | SDA      | SDA          |
+
+  | RX PIN   | KETERANGAN     |
+  |---------:|---------------:|
+  | IO32     | Motor 1        |
+  | IO33     | Motor 2        |
+  | IO25     | Motor 3        |
+  | IO26     | Motor 4        |
+
+  ![multiwii_dashboard](/doc/image/RX/multiwii_dashboard.png)
+
+  ![multiwii](/doc/image/RX/multiwii.png)
+
+  ![multiwii_modes](/doc/image/RX/multiwii_modes.png)
+
+  ![multiwii_remote](/doc/image/RX/multiwii_remote.png)
+
+  ![multiwii_aux](/doc/image/RX/multiwii_aux.png)
+
+  ![multiwii_pid](/doc/image/RX/multiwii_pid.png)
+
+  ![multiwii_motor](/doc/image/RX/multiwii_motor.png)
+
+* ### Quadcopter Drone (Betaflight)
+  ### Features:
+  * ESC protocols (PWM, Oneshot125/42, Multishot, Brushed, Dshot150/300/600 bidirectional)
+  * PPM, SBUS, CRSF, HX_ESPNOW_RC Receivers
+  * Support Gyro: MPU6050, MPU6000, MPU6500, MPU9250, ICM20602 and BMI160
+  * Support Baro: BMP180, BMP280 and SPL06
+  * Support Compass: HMC5883, QMC5883 and AK8963
+  * Flight modes (ACRO, ANGLE, AIRMODE)
+  * Telemetry HX_ESPNOW_RC (A1 = RX Voltage) SPI RX Receiver
+  * Up to 4kHz gyro/loop on ESP32 with SPI gyro
+  * Failsafe mode
+
+  ![betaflight](/doc/image/RX/betaflight.png)
+  ![betaflight_status](/doc/image/RX/betaflight_status.png)
+  ![betaflight_ports](/doc/image/RX/betaflight_ports.png)
+  ![betaflight_voltage](/doc/image/RX/betaflight_voltage.png)
+  ![betaflight_receiver](/doc/image/RX/betaflight_receiver.png)
+  ![betaflight_receiver_ps2](/doc/image/RX/betaflight_receiver_ps2.jpg)
 
 ## Battery AutoPlantBali RC
 * Battery 1S with PH2.0 Plug Connector
@@ -337,3 +384,14 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 
 ![battery_weight](/doc/image/BATTERY/battery_weight.jpg)
 ![battery_capacity](/doc/image/BATTERY/battery_capacity.jpg)
+
+## Step Up / Booster 1S 5 Volt AutoPlantBali RC
+
+![booster_1S_1](/doc/image/BOOSTER_1S_5V/booster_1S_1.jpg)
+![booster_1S_2](/doc/image/BOOSTER_1S_5V/booster_1S_2.jpg)
+![booster_1S_3](/doc/image/BOOSTER_1S_5V/booster_1S_3.jpg)
+
+## Referensi:
+* https://github.com/RomanLut/hx_espnow_rc
+* https://github.com/RomanLut/Multiwii-ESP32-port
+* https://github.com/rtlopez/esp-fc
