@@ -253,7 +253,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
   ![](/doc/image/RX/ta6586-circuit-diagram.jpg)
   
 * ### Mode Receiver RC:
-1.  **Mode 1 (RC Plane - Brushless)**
+### 1. **Mode 1 (RC Plane - Brushless)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -262,7 +263,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | ESC Brushless      |
     | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
-2.  **Mode 2 (RC Plane - Brushed)**
+### 2.  **Mode 2 (RC Plane - Brushed)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -271,7 +273,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | PWM Brushed        |
     | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
-3.  **Mode 3 (RC Plane - 2 Channel Brushed)**
+### 3.  **Mode 3 (RC Plane - 2 Channel Brushed)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -280,7 +283,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | Right PWM Brushed  |
     | IO26     | CHANNEL 4       | Rudder      | Right PWM Brushed  |
 
-4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
+### 4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -289,7 +293,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | ESC Brushless      |
     | IO36     | CHANNEL 3       | Throttle    | ESC Brushless      |
 
-5.  **Mode 5 (RC Plane - Brushed Elevon Mixing)**
+### 5.  **Mode 5 (RC Plane - Brushed Elevon Mixing)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -298,7 +303,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | PWM Brushed        |
     | IO26     | CHANNEL 3       | Throttle    | PWM Brushed        |
 
-6.  **Mode 6 (RC Car / Boat - Brushed)**
+### 6.  **Mode 6 (RC Car / Boat - Brushed)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -307,7 +313,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
     | IO26     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN2) |
 
-7.  **Mode 7 (RC Tank - Brushed)**
+### 7.  **Mode 7 (RC Tank - Brushed)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN               |
     |---------:|----------------:|------------:|-------------------------:|
@@ -316,7 +323,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | Right PWM H-Bridge (IN1) |
     | IO26     | CHANNEL 4       | Throttle    | Right PWM H-Bridge (IN2) |
 
-8.  **Mode 8 (RC Plane 3 Channel - Brushed twin motor)**
+### 8.  **Mode 8 (RC Plane 3 Channel - Brushed twin motor)**
+[RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
@@ -326,8 +334,11 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO26     | CHANNEL 3       | Throttle    | PWM Brushed        |
 
 * ### SBUS Output Receiver
+  Pada file [config.txt](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1) set **SBUS_ACTIVE=1** untuk mengaktifkan SBUS receiver di pin **SCL/SBUS**
 * ### Openlog
+  Pada file [config.txt](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1) set **LOG_ACTIVE=1** untuk mengaktifkan Openlog di pin **TX/RX** dan set baudrate di **LOG_BAUDRATE=115200** untuk baudrate speed 115200
 * ### Quadcopter Drone (MultiWii)
+  [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
   | RX PIN   | GY-87 PIN    |
   |---------:|-------------:|
@@ -358,6 +369,7 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
   ![multiwii_motor](/doc/image/RX/multiwii_motor.png)
 
 * ### Quadcopter Drone (Betaflight)
+  [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
   ### Features:
   * ESC protocols (PWM, Oneshot125/42, Multishot, Brushed, Dshot150/300/600 bidirectional)
   * PPM, SBUS, CRSF, HX_ESPNOW_RC Receivers
