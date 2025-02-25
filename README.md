@@ -264,7 +264,7 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
   ### 2.  **Mode 2 (RC Plane - Brushed)**
- [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
+  [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
     |---------:|----------------:|------------:|-------------------:|
