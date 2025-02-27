@@ -374,6 +374,25 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 
 * ### Quadcopter Drone (Betaflight)
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
+
+  | RX PIN   | GYRO I2C PIN |
+  |---------:|-------------:|
+  | 3V3      | VCC          |
+  | VSS      | GND          |
+  | SCL      | SCL          |
+  | SDA      | SDA          |
+
+  | RX PIN      | GYRO SPI PIN |
+  |------------:|-------------:|
+  | 3V3         | VCC          |
+  | VSS         | GND          |
+  | (IO18) SCK  | SCL          |
+  | (IO23) MOSI | SDA          |
+  | (IO19) MISO | SAO          |
+  | (IO5) CS    | CS           |
+
+  ![gyro_spi_pin](/doc/image/RX/gyro_spi_pin.png)
+
   ### Features:
   * ESC protocols (PWM, Oneshot125/42, Multishot, Brushed, Dshot150/300/600 bidirectional)
   * PPM, SBUS, CRSF, HX_ESPNOW_RC Receivers
