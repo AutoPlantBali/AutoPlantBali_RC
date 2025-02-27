@@ -283,6 +283,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | IO25     | CHANNEL 3       | Throttle    | Right PWM Brushed  |
     | IO26     | CHANNEL 4       | Rudder      | Right PWM Brushed  |
 
+    ![rx_mode_3](/doc/image/RX/rx_mode_3.jpg)
+
   ### 4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
@@ -312,6 +314,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
     | -        | -               | -           | -                  |
     | IO25     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
     | IO26     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN2) |
+
+    ![rx_mode_6](/doc/image/RX/rx_mode_6.jpg)
 
   ### 7.  **Mode 7 (RC Tank - Brushed)**
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
