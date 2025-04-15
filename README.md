@@ -33,6 +33,12 @@ Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
 | MIN_ALARM_VBAT                | Volt Battery x 10, Default: 35    | Set volt per cell battery dikali 10, contoh: set 3.5Volt untuk aktifakan alarm maka valuenya 35|
 | VBAT_OFFSET                   | Vbat offset value                 | Atur nilai offset vbat, contoh: battery 4V tapi di tampilan 3.5V, maka perlu atur nilai 0.5 agar sesuai dengan volt battery yaitu nilai offset 0.5 dikali 10 = 5|
 | FLIP_DISPLAY                  | 1 or 0, Default: 0                | Set 1 untuk membalikan tampilan layar LCD 180 derajat|
+
+* ### Update Firmware TX
+1. Pilih profile 10 (Configuration mode), setelah itu hubungkan laptop / hp dengan nama wifi sesuai dengan **ap_name** (defaul: hxrct) lalu ketik di browser dengan url: 192.168.4.1/manager dan login dengan user: **admin** dan password: **admin**
+![web_config](doc/image/TX/web_config.png)
+2. Klik Choose File dan browse file bin di folder [TX](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main/TX)
+3. Klik Update untuk melakukan update firmware TX dan tunggu beberapa saat sampai proses update firmware selesai.
    
 * ### Setup:
     * ### Radio
@@ -214,9 +220,6 @@ Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
         "ap_password" : ""
     }
     ```
-    
-    Pilih profile 10, setelah itu hubungkan laptop / hp dengan nama wifi sesuai dengan **ap_name** (defaul: hxrct) lalu ketik di browser dengan url: 192.168.4.1/manager dan login dengan user: **admin** dan password: **admin**
-    ![web_config](doc/image/TX/web_config.png)
 
 ## Receiver AutoPlantBali RC
 Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
@@ -244,13 +247,21 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 | ADJUST_RUDDER       | -400 ~ 500, Default: 0    | Adjust range servo rudder (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|  
 | UPDATE_FIRMWARE     | 1 or 0, Default: 0        | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
 
+* ### Update Firmware RX
+1. copy file firmware.bin yang ada pada folder [RX](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main/RX) ke micro SD (file firmware.bin tidak boleh di dalam folder di micro SD)
+2. pada file config.txt ubah **UPDATE_FIRMWARE** menjadi 1 untuk melakukan update firmware.
+3. pasangkan power, jika led berkedip menandakan proses update sedang berjalan
+4. tunggu beberapa saat sampai lampu led normal menandakan proses update telah selesai dan RX sudah bisa digunakan.
+
+NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin CH1 ~ CH4.
+
 * ### PWM Brushed
 
   ![pwm_switch](/doc/image/RX/pwm_switch.png)
 
 * ### PWM H-Bridge
 
-  ![](/doc/image/RX/ta6586-circuit-diagram.jpg)
+  ![ta6586-circuit-diagram](/doc/image/RX/ta6586-circuit-diagram.jpg)
   
 * ### Mode Receiver RC:
   ### 1. **Mode 1 (RC Plane - Brushless)**
