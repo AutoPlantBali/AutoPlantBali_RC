@@ -226,6 +226,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 * ### Receiver Wiring Diagram
 
   ![rx_diagram](/doc/image/RX/rx_diagram.png)
+
+  [Firmware File](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main/RX/APB)
   
 * ### Configuration File
 
@@ -259,9 +261,30 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
 
   ![pwm_switch](/doc/image/RX/pwm_switch.png)
 
+  * #### Mosfet Driver D4184
+    ![mosfet_driver_D4184](/doc/image/RX/mosfet_driver_D4184.png)
+
+  * #### Mosfet Driver F5305S
+    ![mosfet_driver_F5305S](/doc/image/RX/mosfet_driver_F5305S.png)
+
 * ### PWM H-Bridge
 
   ![ta6586-circuit-diagram](/doc/image/RX/ta6586-circuit-diagram.jpg)
+
+  * #### Motor Driver TA6586
+    ![motor_driver_TA6586](/doc/image/RX/motor_driver_TA6586.png)
+
+  * #### Motor Driver MAX1508
+    ![motor_driver_max1508](/doc/image/RX/motor_driver_max1508.png)
+
+  * #### Motor Driver L9110S
+    ![motor_driver_L9110S](/doc/image/RX/motor_driver_L9110S.png)
+
+  * #### Motor Driver L298N
+    ![motor_driver_L298N](/doc/image/RX/motor_driver_L298N.png)
+
+  * #### Motor Driver BTS7960
+    ![motor_driver_BTS7960](/doc/image/RX/motor_driver_BTS7960.png)
   
 * ### Mode Receiver RC:
   ### 1. **Mode 1 (RC Plane - Brushless)**
@@ -328,7 +351,7 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
 
     ![rx_mode_6](/doc/image/RX/rx_mode_6.jpg)
 
-  ### 7.  **Mode 7 (RC Tank - Brushed)**
+  ### 7.  **Mode 7 (RC Tank / Tugboat - Brushed)**
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN               |
@@ -354,6 +377,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
   Pada file [config.txt](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1) set **LOG_ACTIVE=1** untuk mengaktifkan Openlog di pin **TX/RX** dan set baudrate di **LOG_BAUDRATE=115200** untuk baudrate speed 115200
 * ### Quadcopter Drone (MultiWii)
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
+
+  [Firmware File](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main/RX/MULTIWII)
 
   | RX PIN   | GY-87 PIN    |
   |---------:|-------------:|
@@ -385,6 +410,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
 
 * ### Quadcopter Drone (Betaflight)
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
+
+  [Firmware File](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main/RX/BETAFLIGHT)
 
   | RX PIN   | GYRO I2C PIN |
   |---------:|-------------:|
