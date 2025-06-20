@@ -246,7 +246,13 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 | ESC_CALIBRATION     | 1 or 0, Default: 0        | ESC calibraton saat pertama kali dihidupkan (khusus untuk ESC simonk)|
 | ADJUST_AILERON      | -400 ~ 500, Default: 0    | Adjust range servo aileron (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|
 | ADJUST_ELEVATOR     | -400 ~ 500, Default: 0    | Adjust range servo elevator (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|
-| ADJUST_RUDDER       | -400 ~ 500, Default: 0    | Adjust range servo rudder (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|  
+| ADJUST_RUDDER       | -400 ~ 500, Default: 0    | Adjust range servo rudder (untuk beberapa jenis servo 0 ~ 180 derajat memiliki range 500uS ~ 2500uS)|
+| REMOTEXY_ACTIVE     | 1 or 0, Default: 0        | Set 1 untuk mengaktifkan rx standalone menggunakan aplikasi RemoteXY di Android atau Ios |
+| REMOTEXY_WIFI_SSID  | Wifi SSID name            | Nama dari access point / hotspot |
+| REMOTEXY_WIFI_PASSWORD | Wifi Password          | Password dari access point / hotspot |
+| REMOTEXY_SERVER_PORT | Default: 6377            | Port server untuk terhubung ke aplikasi RemoteXY |
+| REMOTEXY_ACCESS_PASSWORD | Default: 1234        | Password access untuk mengakses GUI dari remote |
+| REMOTEXY_THROTTLE_CENTER | 1 or 0, Default: 1   | Set 1 untuk posisi throttle di tengah seperti mode rc car / boat dan set 0 untuk  posisi throttle di bawah untuk mode rc plane |   
 | UPDATE_FIRMWARE     | 1 or 0, Default: 0        | Set 1 untuk melakukan update firmware, pastikan file firmware.bin ada di microSD card|
 
 * ### Update Firmware RX
@@ -261,29 +267,26 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
 
   ![pwm_switch](/doc/image/RX/pwm_switch.png)
 
-  * #### Mosfet Driver D4184
+  * #### Mosfet Driver D4184 (40V 50A)
     ![mosfet_driver_D4184](/doc/image/RX/mosfet_driver_D4184.png)
-
-  * #### Mosfet Driver F5305S
-    ![mosfet_driver_F5305S](/doc/image/RX/mosfet_driver_F5305S.png)
 
 * ### PWM H-Bridge
 
   ![ta6586-circuit-diagram](/doc/image/RX/ta6586-circuit-diagram.jpg)
 
-  * #### Motor Driver TA6586
+  * #### Motor Driver TA6586 (14V 5A)
     ![motor_driver_TA6586](/doc/image/RX/motor_driver_TA6586.png)
 
-  * #### Motor Driver MAX1508
+  * #### Motor Driver MAX1508 (10V 1.5A)
     ![motor_driver_max1508](/doc/image/RX/motor_driver_max1508.png)
 
-  * #### Motor Driver L9110S
+  * #### Motor Driver L9110S (12V 800mA)
     ![motor_driver_L9110S](/doc/image/RX/motor_driver_L9110S.png)
 
-  * #### Motor Driver L298N
+  * #### Motor Driver L298N (35V 2A)
     ![motor_driver_L298N](/doc/image/RX/motor_driver_L298N.png)
 
-  * #### Motor Driver BTS7960
+  * #### Motor Driver BTS7960 (27V 43A)
     ![motor_driver_BTS7960](/doc/image/RX/motor_driver_BTS7960.png)
   
 * ### Mode Receiver RC:
@@ -448,6 +451,35 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
   ![betaflight_voltage](/doc/image/RX/betaflight_voltage.png)
   ![betaflight_receiver](/doc/image/RX/betaflight_receiver.png)
   ![betaflight_receiver_ps2](/doc/image/RX/betaflight_receiver_ps2.jpg)
+
+* ### RX Standalone (RemoteXY) 
+  Untuk mengaktifkan RX standalone (tanpa TX) set pada file config.txt seperti dibawah ini.
+  ``` text
+  LOG_ACTIVE=0
+  SBUS_ACTIVE=0
+  REMOTEXY_ACTIVE=1
+  ```
+
+  pengaturan trim dan reverse RemoteXY ada pada file config_remotexy.txt
+  | KEY                 | VALUE                     | KETERANGAN                                          |
+  |:--------------------|:--------------------------|:----------------------------------------------------|
+  | TRIM_AILERON        | -400 ~ 400, Default: 0    | Trim aileron / steering                             |
+  | TRIM_ELEVATOR       | -400 ~ 400, Default: 0    | Trim elevator                                       |
+  | TRIM_THROTTLE       | -400 ~ 400, Default: 0    | Trim throttle                                       |  
+  | TRIM_RUDDER         | -400 ~ 400, Default: 0    | Trim rudder                                         |
+  | REVERSE_AILERON     | 1 or 0, Defualt: 0        | Set 1 untuk mengaktifkan reverse aileron / steering |
+  | REVERSE_ELEVATOR    | 1 or 0, Defualt: 0        | Set 1 untuk mengaktifkan reverse elevator           |
+  | REVERSE_THROTTLE    | 1 or 0, Defualt: 0        | Set 1 untuk mengaktifkan reverse throttle           |
+  | REVERSE_RUDDER      | 1 or 0, Defualt: 0        | Set 1 untuk mengaktifkan reverse rudder             |
+
+  > [!NOTE]  
+  > Setelah melakukan trim atau reverse pilih opsi **SAVE** untuk menyimpan permanen di file config_remotexy.txt
+
+  GUI saat mode REMOTEXY_THROTTLE_CENTER = 1
+  ![rx_remotexy_center_1](/doc/image/RX/rx_remotexy_center_1.png)
+
+  GUI saat mode REMOTEXY_THROTTLE_CENTER = 0
+  ![rx_remotexy_center_0](/doc/image/RX/rx_remotexy_center_0.png)
 
 ## Battery AutoPlantBali RC
 * Battery 1S with PH2.0 Plug Connector
