@@ -472,7 +472,7 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
   | REVERSE_THROTTLE    | 1 or 0, Defualt: 0        | Set 1 untuk mengaktifkan reverse throttle           |
   | REVERSE_RUDDER      | 1 or 0, Defualt: 0        | Set 1 untuk mengaktifkan reverse rudder             |
 
-  > [!NOTE]  
+  > **Note**  
   > Setelah melakukan trim atau reverse pilih opsi **SAVE** untuk menyimpan permanen di file config_remotexy.txt
 
   GUI saat mode REMOTEXY_THROTTLE_CENTER = 1
