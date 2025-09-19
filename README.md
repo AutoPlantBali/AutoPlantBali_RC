@@ -5,7 +5,8 @@ AutoPlantBali RC adalah remote control berbasis esp32 yang dikembangkan dari cod
 ## Transmitter AutoPlantBali RC
 Transmitter AutoPlantBali adalah external module remote yang dapat menerima signal SBUS, PPM, stick PS2 dan remote control mobile apps (RemoteXY) via bluetooth.
 
-Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
+Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
 * ### Fitur:
     - Support 16 Channel
     - Normal & Long Range Mode
@@ -222,7 +223,8 @@ Marketplace: [Tokopedia](https://tokopedia.link/irYhezPOzPb)
     ```
 
 ## Receiver AutoPlantBali RC
-Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
+Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
 * ### Receiver Wiring Diagram
 
   ![rx_diagram](/doc/image/RX/rx_diagram.png)
@@ -233,6 +235,7 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 
 | KEY                 | VALUE                     | KETERANGAN         |
 |:--------------------|:--------------------------|:-------------------|
+| APB_ID              |                           | ID Device|
 | VERSION             |                           | Versi dari firmware rx|
 | DEVELOP             |                           | Pembuat firmware|
 | WIFI_CHANNEL        | 1 ~ 11, Default: 3        | Range channel wifi dan kombinasi dengan key sebagai kode unik ke TX|
@@ -257,7 +260,7 @@ Marketplace: [Tokopedia](https://tokopedia.link/P3PEw5BOzPb)
 
 * ### Update Firmware RX
 1. copy file firmware.bin yang ada pada folder [RX](https://github.com/AutoPlantBali/AutoPlantBali_RC/tree/main/RX) ke micro SD (file firmware.bin tidak boleh di dalam folder di micro SD)
-2. pada file config.txt ubah **UPDATE_FIRMWARE** menjadi 1 untuk melakukan update firmware.
+2. pada file config.txt ubah **UPDATE_FIRMWARE** menjadi **1** untuk melakukan update firmware.
 3. pasangkan power, jika led berkedip menandakan proses update sedang berjalan
 4. tunggu beberapa saat sampai lampu led normal menandakan proses update telah selesai dan RX sudah bisa digunakan.
 
@@ -291,6 +294,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
   
 * ### Mode Receiver RC:
   ### 1. **Mode 1 (RC Plane - Brushless)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -301,6 +306,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
     | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
   ### 2.  **Mode 2 (RC Plane - Brushed)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -311,6 +318,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
     | IO26     | CHANNEL 4       | Rudder      | Servo              |
 
   ### 3.  **Mode 3 (RC Plane - 2 Channel Brushed)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -323,6 +332,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
     ![rx_mode_3](/doc/image/RX/rx_mode_3.jpg)
 
   ### 4.  **Mode 4 (RC Plane - Brushless Elevon Mixing)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -333,6 +344,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
     | IO36     | CHANNEL 3       | Throttle    | ESC Brushless      |
 
   ### 5.  **Mode 5 (RC Plane - Brushed Elevon Mixing)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -343,18 +356,25 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
     | IO26     | CHANNEL 3       | Throttle    | PWM Brushed        |
 
   ### 6.  **Mode 6 (RC Car / Boat - Brushed)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
-    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
-    |---------:|----------------:|------------:|-------------------:|
-    | IO32     | CHANNEL 1       | Aileron     | Servo Steering     |
-    | -        | -               | -           | -                  |
-    | IO25     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1) |
-    | IO26     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN2) |
+    | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN               |
+    |---------:|----------------:|------------:|-------------------------:|
+    | IO32     | CHANNEL 1       | Aileron     | Servo Steering           |
+    | -        | -               | -           | -                        |
+    | IO25     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN1)       |
+    | IO26     | CHANNEL 3       | Throttle    | PWM H-Bridge (IN2)       |
+    | IO27     | -               | -           | Headlight                |
+    | IO18     | -               | -           | Breaklight               |
 
     ![rx_mode_6](/doc/image/RX/rx_mode_6.jpg)
+    ![rc_mode_6_1](/doc/image/RX/rc_mode_6_1.jpg)
 
   ### 7.  **Mode 7 (RC Tank / Tugboat - Brushed)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN               |
@@ -365,6 +385,8 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
     | IO26     | CHANNEL 4       | Throttle    | Right PWM H-Bridge (IN2) |
 
   ### 8.  **Mode 8 (RC Plane 3 Channel - Brushed twin motor)**
+  Marketplace: [TOCO](https://toco.id/store/auto-plant-bali), Forum Diskusi: [Auto Plant Bali Community](https://toco.id/community/auto-plant-bali-rc)
+  
   [RX Wiring](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#receiver-wiring-diagram)
 
     | RX PIN   | CHANNEL         | SIGNAL      | KETERANGAN         |
@@ -475,11 +497,41 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
   > **Note**  
   > Setelah melakukan trim atau reverse pilih opsi **SAVE** untuk menyimpan permanen di file config_remotexy.txt
 
-  GUI saat mode REMOTEXY_THROTTLE_CENTER = 1
+  GUI saat mode **REMOTEXY_THROTTLE_CENTER = 1**
   ![rx_remotexy_center_1](/doc/image/RX/rx_remotexy_center_1.png)
 
-  GUI saat mode REMOTEXY_THROTTLE_CENTER = 0
+  GUI saat mode **REMOTEXY_THROTTLE_CENTER = 0**
   ![rx_remotexy_center_0](/doc/image/RX/rx_remotexy_center_0.png)
+
+  #### Panduan Penggunaan:
+  1. Install aplikasi **RemoteXY** dan **Mobile Hotspot**
+      ![remotexy](/doc/image/RX/remotexy.png)
+      ![mobile_hotspot](/doc/image/RX/mobile_hotspot.png)
+
+  2. Setting hotspot name: **AutoPlantBali** dan hotspot password: **autoplantbali** pada hp. Untuk merubah nama hotspot dan password dapat dilakukan pada **REMOTEXY_WIFI_SSID** dan **REMOTEXY_WIFI_PASSWORD** di file [config](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1)
+      ![hotspot_hp](/doc/image/RX/hotspot_hp.png)
+
+  3. Pada aplikasi Mobile Hotspot klik Turn On Hotspot dan selanjutnya hidupkan RC lalu tunggu beberapa saat sampai RC terhubung ke hotspot ditandai dengan lampu RC berkedip pelan.
+      ![mobile_hotspot1](/doc/image/RX/mobile_hotspot1.png)
+
+  4. Pada aplikasi Mobile Hotspot klik Client untuk melihat IP Address dari RC.
+      ![mobile_hotspot2](/doc/image/RX/mobile_hotspot2.png)
+      ![mobile_hotspot3](/doc/image/RX/mobile_hotspot3.png)
+
+  5. Buka aplikasi RemoteXY klik tanda + pada sudut kanan atas lalu pilih Ethernet.
+      ![remotexy1](/doc/image/RX/remotexy1.png)
+
+  6. Pada menu Ethernet klik Device IP or URL lalu masukkan IP address dari RC kemudian klik Connect.
+      ![remotexy2](/doc/image/RX/remotexy2.png)
+      ![remotexy3](/doc/image/RX/remotexy3.png)
+
+  7. Pada Access Password input password (default: 1234) **REMOTEXY_ACCESS_PASSWORD** pada file [config]((https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1)) dan centang Save password kemudian klik OK.
+      ![remotexy4](/doc/image/RX/remotexy4.png)
+      ![remotexy5](/doc/image/RX/remotexy5.png)
+      
+  8. Pada Layar HP akan muncul tampilan remote dan lampu RC menyala terus menandakan RC siap dimainkan.
+      ![remotexy6](/doc/image/RX/remotexy6.png)
+      ![remotexy7](/doc/image/RX/remotexy7.png)
 
 ## Battery AutoPlantBali RC
 * Battery 1S with PH2.0 Plug Connector
