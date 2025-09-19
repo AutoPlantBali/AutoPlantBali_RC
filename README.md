@@ -503,35 +503,35 @@ NB: pada saat melakukan update firmware pastikan tidak ada yang terhubung ke pin
   GUI saat mode **REMOTEXY_THROTTLE_CENTER = 0**
   ![rx_remotexy_center_0](/doc/image/RX/rx_remotexy_center_0.png)
 
-  #### Panduan Penggunaan:
+### Panduan Penggunaan:
   1. Install aplikasi **RemoteXY** dan **Mobile Hotspot**
-      ![remotexy](/doc/image/RX/remotexy.png)
-      ![mobile_hotspot](/doc/image/RX/mobile_hotspot.png)
-
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy.png" width=60% height=60%>
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/mobile_hotspot.png" width=60% height=60%>
+  
   2. Setting hotspot name: **AutoPlantBali** dan hotspot password: **autoplantbali** pada hp. Untuk merubah nama hotspot dan password dapat dilakukan pada **REMOTEXY_WIFI_SSID** dan **REMOTEXY_WIFI_PASSWORD** di file [config](https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1)
-      ![hotspot_hp](/doc/image/RX/hotspot_hp.png)
-
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/hotspot_hp.png" width=60% height=60%>
+  
   3. Pada aplikasi Mobile Hotspot klik Turn On Hotspot dan selanjutnya hidupkan RC lalu tunggu beberapa saat sampai RC terhubung ke hotspot ditandai dengan lampu RC berkedip pelan.
-      ![mobile_hotspot1](/doc/image/RX/mobile_hotspot1.png)
-
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/mobile_hotspot1.png" width=60% height=60%>
+  
   4. Pada aplikasi Mobile Hotspot klik Client untuk melihat IP Address dari RC.
-      ![mobile_hotspot2](/doc/image/RX/mobile_hotspot2.png)
-      ![mobile_hotspot3](/doc/image/RX/mobile_hotspot3.png)
-
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/mobile_hotspot2.png" width=60% height=60%>
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/mobile_hotspot3.png" width=60% height=60%>
+  
   5. Buka aplikasi RemoteXY klik tanda + pada sudut kanan atas lalu pilih Ethernet.
-      ![remotexy1](/doc/image/RX/remotexy1.png)
-
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy1.png" width=60% height=60%>
+  
   6. Pada menu Ethernet klik Device IP or URL lalu masukkan IP address dari RC kemudian klik Connect.
-      ![remotexy2](/doc/image/RX/remotexy2.png)
-      ![remotexy3](/doc/image/RX/remotexy3.png)
-
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy2.png" width=60% height=60%>
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy3.png" width=60% height=60%>
+  
   7. Pada Access Password input password (default: 1234) **REMOTEXY_ACCESS_PASSWORD** pada file [config]((https://github.com/AutoPlantBali/AutoPlantBali_RC?tab=readme-ov-file#configuration-file-1)) dan centang Save password kemudian klik OK.
-      ![remotexy4](/doc/image/RX/remotexy4.png)
-      ![remotexy5](/doc/image/RX/remotexy5.png)
-      
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy4.png" width=60% height=60%>
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy5.png" width=60% height=60%>
+  
   8. Pada Layar HP akan muncul tampilan remote dan lampu RC menyala terus menandakan RC siap dimainkan.
-      ![remotexy6](/doc/image/RX/remotexy6.png)
-      ![remotexy7](/doc/image/RX/remotexy7.png)
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy6.png" width=60% height=60%>
+  <img src="https://github.com/AutoPlantBali/AutoPlantBali_RC/blob/main/doc/image/RX/remotexy7.png" width=60% height=60%>
 
 ## Battery AutoPlantBali RC
 * Battery 1S with PH2.0 Plug Connector
